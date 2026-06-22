@@ -17,7 +17,9 @@ class GroupsViewController: UIViewController {
         title = "Groups"
         view.backgroundColor = .systemGroupedBackground
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addGroupTapped))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addGroupTapped))
+        let importButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.down"), style: .plain, target: self, action: #selector(importJSONTapped))
+        navigationItem.rightBarButtonItems = [addButton, importButton]
 
         NotificationCenter.default.addObserver(self, selector: #selector(reloadGroups), name: .didUpdateGroups, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadGroups), name: .didUpdateDecks, object: nil)
@@ -70,6 +72,13 @@ class GroupsViewController: UIViewController {
     }
 
     // MARK: - Actions
+
+    @objc private func importJSONTapped() {
+        let importVC = JSONImportViewController()
+        let navController = UINavigationController(rootViewController: importVC)
+        navController.modalPresentationStyle = .formSheet
+        present(navController, animated: true)
+    }
 
     @objc private func addGroupTapped() {
         let alert = UIAlertController(title: "New Group", message: "Enter a name for this study group.", preferredStyle: .alert)

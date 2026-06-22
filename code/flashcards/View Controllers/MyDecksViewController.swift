@@ -88,6 +88,10 @@ class MyDecksViewController: UIViewController {
             self?.presentAIGeneration()
         })
 
+        alert.addAction(UIAlertAction(title: "Import from JSON", style: .default) { [weak self] _ in
+            self?.presentJSONImport()
+        })
+
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
 
         present(alert, animated: true)
@@ -102,6 +106,13 @@ class MyDecksViewController: UIViewController {
     private func presentAIGeneration() {
         let aiInputVC = AIInputViewController()
         let navController = UINavigationController(rootViewController: aiInputVC)
+        navController.modalPresentationStyle = .formSheet
+        present(navController, animated: true)
+    }
+
+    private func presentJSONImport() {
+        let importVC = JSONImportViewController()
+        let navController = UINavigationController(rootViewController: importVC)
         navController.modalPresentationStyle = .formSheet
         present(navController, animated: true)
     }

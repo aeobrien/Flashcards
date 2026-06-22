@@ -93,6 +93,8 @@
 		ADB00A532BE6110000A1F02B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB00A522BE6110000A1F02B /* DashboardViewController.swift */; };
 		A1B2C3D4E5F60011AABB02 /* ConceptListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60011AABB01 /* ConceptListViewController.swift */; };
 		A1B2C3D4E5F60011AABB04 /* ConceptDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60011AABB03 /* ConceptDetailViewController.swift */; };
+		A1B2C3D4E5F60011AABB06 /* JSONImportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60011AABB05 /* JSONImportService.swift */; };
+		A1B2C3D4E5F60011AABB08 /* JSONImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60011AABB07 /* JSONImportViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,6 +207,8 @@
 		ADB00A522BE6110000A1F02B /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F60011AABB01 /* ConceptListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptListViewController.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F60011AABB03 /* ConceptDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptDetailViewController.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60011AABB05 /* JSONImportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONImportService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60011AABB07 /* JSONImportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONImportViewController.swift; sourceTree = "<group>"; };
 		ADB00A542BE6110000A1F02C /* Model 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 5.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -393,6 +397,7 @@
 				ADB00A202BE6110000A1F011 /* TranscriptionService.swift */,
 				ADB00A402BE6110000A1F021 /* DebugLogService.swift */,
 				ADB00A4A2BE6110000A1F027 /* GroupService.swift */,
+				A1B2C3D4E5F60011AABB05 /* JSONImportService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 				ADB00A522BE6110000A1F02B /* DashboardViewController.swift */,
 				A1B2C3D4E5F60011AABB01 /* ConceptListViewController.swift */,
 				A1B2C3D4E5F60011AABB03 /* ConceptDetailViewController.swift */,
+				A1B2C3D4E5F60011AABB07 /* JSONImportViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -722,6 +728,8 @@
 				ADB00A532BE6110000A1F02B /* DashboardViewController.swift in Sources */,
 				A1B2C3D4E5F60011AABB02 /* ConceptListViewController.swift in Sources */,
 				A1B2C3D4E5F60011AABB04 /* ConceptDetailViewController.swift in Sources */,
+				A1B2C3D4E5F60011AABB06 /* JSONImportService.swift in Sources */,
+				A1B2C3D4E5F60011AABB08 /* JSONImportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
