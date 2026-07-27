@@ -1,0 +1,23 @@
+{
+  "capture_finished_at_utc": "2026-07-27T00:37:22Z",
+  "capture_started_at_utc": "2026-07-27T00:37:20Z",
+  "captured_at_utc": "2026-07-27T00:37:20Z",
+  "captured_byte_estimate": 16678144,
+  "captured_path_count": 153,
+  "consistency_retry_count": 0,
+  "excluded": [],
+  "github_hard_limit_bytes": 100000000,
+  "guardian_version": "2.0-sidecar",
+  "head_state": "symbolic",
+  "host": "aidans-mac-mini",
+  "racy_capture": false,
+  "repository_id": "Flashcards-765f2719080a",
+  "schema_version": 1,
+  "snapshot_blob_threshold_bytes": 94371840,
+  "snapshot_consistency": "stable",
+  "source_branch": "main",
+  "source_head_oid": "f1eddeb279aafe6adbb14e678b78484d5e31ccd6",
+  "source_index_sha256": "abd38f2a494edcb59e3f4f3a9aabb1cab52939b7e5c48284a4b69ec2e47154ea",
+  "source_path": "/Users/aidanobrien/Dev/Flashcards",
+  "upstream_observed": "origin/main"
+}
