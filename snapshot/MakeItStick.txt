@@ -1,0 +1,33 @@
+### Practical Suggestions for Your App Design
+
+Here is how you can implement these principles to maximize the effectiveness of your system:
+
+#### 1. Implement "Spaced Repetition" Algorithms (The Leitner Box)
+Don't just interleave topics; automate the **spacing** of reviews.
+*   **The Trap:** Students often drop a flashcard from the deck as soon as they get it right once, believing they have learned it.
+*   **The Fix:** Design the algorithm so users cannot manually remove a card immediately. Instead, use a system similar to a **Leitner box**: when a user answers correctly, that card should reappear after a longer interval (e.g., 3 days, then 1 week, then 1 month). If they get it wrong, it should reappear sooner. The goal is to present the card just as the user has started to forget it, making the retrieval effortful.
+
+#### 2. Use AI to Create "Varied" Questions (Not Just Repetitive Ones)
+To utilize **varied practice**, the AI should not just generate one static card for a concept.
+*   **The Fix:** If the concept is "Supply and Demand," the AI should generate multiple variations: one card asking for a definition, another presenting a scenario asking the user to predict the price shift, and another asking for a real-world example.
+*   **Why:** This prevents rote memorization of a specific card and forces the user to build a flexible "mental model" of the concept.
+
+#### 3. Prompt for "Elaboration" in Grading
+Since your app accepts natural language answers, you can enforce **elaboration**.
+*   **The Fix:** Instruct the AI grading agent to reward answers that connect the concept to other topics. You could even have specific "Elaboration Cards" that explicitly ask: "How does this concept relate to [Prior Concept X]?" or "Provide a metaphor for this concept".
+*   **Why:** This helps the user knit the new learning into what they already know, creating more retrieval cues.
+
+#### 4. "Write-to-Learn" Pre-Generation Feature
+Leverage **generation** before the cards are even created.
+*   **The Fix:** Before the AI generates the flashcards from the uploaded notes, ask the user to type a brief summary of what they think the key takeaways are.
+*   **Why:** Struggling to recall the main points *before* seeing the study material (the cards) primes the mind. Even if their summary is incomplete, this "awful blurting" engages the mind and makes the subsequent study session more effective.
+
+#### 5. Provide Corrective, Detailed Feedback
+The LLM grader should do more than assign a grade.
+*   **The Fix:** If the user is wrong, the AI must provide the correct answer and explain *why* the user's answer was incorrect. If the answer was correct but "thin," the AI should provide a more robust example to help the user deepen their understanding.
+*   **Why:** Giving corrective feedback ensures errors are not learned.
+
+#### 6. Dashboard for Calibration
+Help users overcome **illusions of knowing**.
+*   **The Fix:** Create a dashboard that objectively visualizes their mastery. Show them clearly which topics they are failing (even if they think they know them) and which ones they have successfully retrieved over spaced intervals.
+*   **Why:** This replaces subjective feelings of fluency ("I feel like I know this") with objective gauges, helping them focus study time where it is actually needed.
