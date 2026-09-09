@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sort:*)",
+      "WebSearch",
+      "Bash(gh api:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(plutil:*)",
+      "Bash(xmllint:*)",
+      "Bash(xcodebuild:*)",
+      "Bash(xargs ls:*)",
+      "Bash(grep:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(gh auth:*)",
+      "Bash(head:*)",
+      "Bash(git remote:*)",
+      "Bash(git rm:*)"
+    ]
+  }
+}
