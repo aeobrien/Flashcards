@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23B92" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Concept" representedClassName=".Concept" syncable="YES">
+        <attribute name="conceptID" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="deck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="concepts" inverseEntity="Deck"/>
+        <relationship name="flashcards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Flashcard" inverseName="concept" inverseEntity="Flashcard"/>
+    </entity>
+    <entity name="Deck" representedClassName=".Deck" syncable="YES">
+        <attribute name="completedCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="deckDescription" optional="YES" attributeType="String"/>
+        <attribute name="deckID" optional="YES" attributeType="String"/>
+        <attribute name="deckName" optional="YES" attributeType="String"/>
+        <attribute name="isFavourited" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="lastViewed" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="totalCards" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="concepts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Concept" inverseName="deck" inverseEntity="Concept"/>
+        <relationship name="flashcards" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Flashcard" inverseName="deck" inverseEntity="Flashcard"/>
+        <relationship name="studySessions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StudySession" inverseName="deck" inverseEntity="StudySession"/>
+    </entity>
+    <entity name="Flashcard" representedClassName=".Flashcard" syncable="YES">
+        <attribute name="backDescription" optional="YES" attributeType="String"/>
+        <attribute name="bulletPointsJSON" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="flashcardID" optional="YES" attributeType="String"/>
+        <attribute name="frontLabel" optional="YES" attributeType="String"/>
+        <attribute name="lastGrade" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lastReviewedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="leitnerBox" optional="YES" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="modelParagraph" optional="YES" attributeType="String"/>
+        <attribute name="nextReviewDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <relationship name="concept" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Concept" inverseName="flashcards" inverseEntity="Concept"/>
+        <relationship name="deck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="flashcards" inverseEntity="Deck"/>
+        <relationship name="sessionResponses" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SessionResponse" inverseName="flashcard" inverseEntity="SessionResponse"/>
+    </entity>
+    <entity name="SessionResponse" representedClassName=".SessionResponse" syncable="YES">
+        <attribute name="answeredAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="feedback" optional="YES" attributeType="String"/>
+        <attribute name="grade" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="responseID" optional="YES" attributeType="String"/>
+        <attribute name="userAnswer" optional="YES" attributeType="String"/>
+        <relationship name="flashcard" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Flashcard" inverseName="sessionResponses" inverseEntity="Flashcard"/>
+        <relationship name="session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StudySession" inverseName="responses" inverseEntity="StudySession"/>
+    </entity>
+    <entity name="StudySession" representedClassName=".StudySession" syncable="YES">
+        <attribute name="completedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="sessionID" optional="YES" attributeType="String"/>
+        <attribute name="startedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="deck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="studySessions" inverseEntity="Deck"/>
+        <relationship name="responses" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SessionResponse" inverseName="session" inverseEntity="SessionResponse"/>
+    </entity>
+</model>
